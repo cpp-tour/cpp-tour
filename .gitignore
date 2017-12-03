@@ -3,6 +3,10 @@ tags
 tags.temp
 tags.lock
 
+# Intermediate directories
+_out/
+_bin/
+
 # NPM packages folder.
 node_modules/
 
