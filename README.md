@@ -2,6 +2,8 @@
 
 Welcome to the tour of C++.
 
+[![Build Status](https://travis-ci.org/Leandros/cpp-tour.svg?branch=master)](https://travis-ci.org/Leandros/cpp-tour)
+
 
 # [Click Here to Take the Tour](https://cpp-tour.com)
 
