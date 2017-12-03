@@ -14,7 +14,7 @@ REPO=$(git config remote.origin.url)
 HASH=$(git log --oneline | grep "\[TRAVIS\]" | awk '{print $1}' | head -n1)
 DESC=$(git describe --tags --always --dirty)
 LOG=$(git log --pretty="- "%s --first-parent $HASH..HEAD)
-MSG=$(echo -ne "[TRAVIS] Auto deployment of ${HASH}:\n\n${LOG}\n")
+MSG=$(echo -ne "[TRAVIS] Auto deployment of ${DESC}:\n\n${LOG}\n")
 
 # Clone the repo
 git clone $REPO _out/
@@ -24,6 +24,7 @@ git checkout gh-pages || git checkout --orphan gh-pages
 # Replace contents with the build contents
 rm -rf *
 cp -rf ../public/* .
+cp ../CNAME .
 
 # Remove temporary files
 find . -name "_*.*" | xargs rm -rf
