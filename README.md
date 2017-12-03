@@ -19,8 +19,17 @@ Just here to take the tour? Go to [https://cpp-tour.com](https://cpp-tour.com).
 
 # Getting Started
 
-**TODO**
+## Build instruction
 
+### Development
+
+`npm start` - runs developement server on `localhost:3333`.
+It automatically re-builds changes.
+
+### Production
+
+`npm run build:p` builds production version with all optimizations.
+It is stored in directory `public/`
 
 # Branch Policy
 
@@ -57,3 +66,4 @@ All the content in the tour is licensed under [CC-BY-SA 4.0](http://creativecomm
 [CONTRIBUTING]:         https://github.com/Leandros/cpp-tour/blob/dev/CONTRIBUTING.md#
 [CHANGELOG on master]:  https://github.com/Leandros/cpp-tour/blob/master/CHANGELOG.md#
 [CHANGELOG on dev]:     https://github.com/Leandros/cpp-tour/blob/dev/CHANGELOG.md#
+
