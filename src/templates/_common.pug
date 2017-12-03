@@ -17,21 +17,3 @@ mixin noscript
     noscript
         p="Javascript is disabled :("
         p="Please enable it for site to work."
-
--
-    var links = [
-        {title: "Home", url: "/"},
-        {title: "Blog", url: "/blog/index.html"},
-        {title: "Goodies", url: "/goodies.html"},
-        {title: "Gallery", url: "/gallery.html"},
-        {title: "Contacts", url: "/contacts.html"},
-        {title: "CV", url: "/cv.html"}
-    ]
-
-mixin nav(selected_title)
-    nav.nav
-        each link in links
-            if link.title.toLowerCase() == selected_title.toLowerCase()
-                a.nav__link.nav__link--selected(href=link.url)=link.title
-            else
-                a.nav__link(href=link.url)=link.title
