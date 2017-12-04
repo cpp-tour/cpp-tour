@@ -21,6 +21,7 @@
     "author": "Douman <douman@gmx.se>",
     "license": "MIT",
     "devDependencies": {
+        "codemirror": "5",
         "webpack": "3",
         "webpack-dev-server": "2",
         "purecss": "1",

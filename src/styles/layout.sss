@@ -1,16 +1,62 @@
-#layout,
-#menu,
-.menu-link
-    transition: all 0.2s ease-out
-
-#layout
-    position: relative
+.layout
+    display: flex
+    flex-direction: column
+    position: fixed
+    top: 0
     left: 0
+    right: 0
+    bottom: 0
 
-#layout.active #menu
-    left: 250px
-    width: 250px
+.layout__header
+    background: #222
+    flex: 1 0
+    max-height: 2.5em
+    z-index: 500 //To overshadow everything
+    box-shadow: 3px 3px 3px 4px rgba(0, 0, 0, 0.4)
+    //Text properties
+    font-size: 1.25em
+    color: white
+    //Elements alignment(both parent and children should use it)
+    display: inline-block
 
-#layout.active .menu-link
-    left: 250px
+    & > *
+        display: inline-block
+        font-size: inherit
+        padding: .6em
 
+.layout__header__menu
+    cursor: pointer
+    &:hover
+        background: #333
+
+.layout__content
+    flex: 2 0
+    display: flex
+
+.main
+    flex: 5 0 60%
+    display: flex
+
+    @media screen and (max-width: 960px)
+        flex-direction: column
+
+.main__content
+    flex: 2 0 40%
+    padding: 1em
+    overflow: auto
+
+.main__separator
+    flex: 1 0
+    background: #222
+    max-width: 10px
+
+    @media screen and (max-width: 960px)
+        max-width: unset
+        max-height: 10px
+
+.main__editor
+    flex: 2 0 40%
+    overflow: auto
+
+    & > .CodeMirror
+        height: 100%
