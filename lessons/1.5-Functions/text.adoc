@@ -1,0 +1,19 @@
+= Functions
+
+Once your program grows larger, you will want to separate parts of code into
+named pieces. In C++, like in many other languages, you do this with
+*functions*.
+
+On line 8 we declare a function called `print_the_answer`. The body of the
+function starts with an opening curly brace and ends with a closing curly
+brace, just like with namespaces. That's because functions also start a
+_scope_, the difference, though, is that names from function's scope are not
+accessible outside of it.
+
+In order to _call_ a function, you use the _function call operator_, just like
+on line 17.
+
+You likely noticed, that the entry point for our program looks suspiciously
+like a function. That's because it *is* a function. It's a special function
+though: no other function in the program is allowed to have the name `main`
+and you are not allowed to call it yourself.

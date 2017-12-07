@@ -1,0 +1,15 @@
+= Variables
+
+Programs store data in variables. On line 5, a variable, called `the_answer` is
+_declared_ (using `int the_answer`) and _initialized_ with an _integer literal_
+(using `= 42`). It is a good practice to always initialize your variables.
+
+In C++ all variables have types, as such, a declaration has to specify the type
+for the variable. We will discuss types in more detail in the following lesson.
+For now, we'll only say, that variable `the_answer` is of type `int` which
+represents an integer value.
+
+In order to use a variable, you just put it's name into an expression (as we
+do in line 6. You may notice, that `std::cout` also looks like a variable.
+Indeed, it is: its value is the _standard output stream_ object, and its
+declaration was added to our code when we _included_ the file `iostream`.

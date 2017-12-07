@@ -1,0 +1,13 @@
+= Basic Syntax
+
+Let's start, with a simple example program. The code, you see nearby, is
+printing a number. Let's dissect each line separately.
+
+Line 1 _includes_ the contents of another file. In this case, it is a file,
+called `iostream`, conveniently provided to us by the C++ _standard library_.
+
+Line 4 defines the _entry point_ to our program, from which it starts. The
+entry point *has to be* named `main`.
+
+Line 5 contains the _statement_ that does the printing. Statements should end
+with a semicolon.

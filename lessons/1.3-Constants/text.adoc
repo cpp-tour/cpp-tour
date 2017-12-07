@@ -1,0 +1,9 @@
+= Constants
+
+Often you need to use a value that never changes for the duration of the
+program, or is even known in advance. It is usually a good idea to give this
+value a name, and then refer to that name rather then the value itself. You do
+this by declaring a _constant_.
+
+In order to do that, you add the _keyword_ `const` to the declaration, just
+like we did in line 4.
