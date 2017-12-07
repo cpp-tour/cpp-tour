@@ -22,5 +22,6 @@ and improvements, similar to the CppCoreGuidelines.
 
 
 On behalf of the project team,
+
 Arvid
 

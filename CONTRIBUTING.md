@@ -18,6 +18,22 @@ issue, and should be assigned to the pull request. This will increase the chance
 that your pull request is accepted.
 
 
+# Branch Policy
+
+The `master` branch is stable at all times, and will only be updated for new
+releases or bugfixes. This branch will be deployed on cpp-tour.com.
+
+The `dev` branch is the main development branch, **all pull-requests should be
+submitted to `dev`.** It might be unstable at times.
+
+The `gh-pages` branch is the deployed website, and will be automatically
+updated by pushing to `master`. It should not be touched manually, all changes
+pushed will be overriden on the next automatic deployment.
+
+Any other branch is likely a working branch, and might contain incomplete
+changes.  Do not attempt to deploy, or file any pull-request against them.
+
+
 # Code Style
 
 The project uses `clang-format` to produce a reproducible and consistent style
