@@ -9,8 +9,12 @@
 *.cpp text
 *.hxx text
 *.cxx text
+*.sh text
 *.js text
+*.yml text
+*.pug text
 *.css text
+*.sss text
 *.json text
 
 # Windows specific files should retain windows line-endings
