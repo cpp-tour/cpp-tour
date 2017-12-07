@@ -1,6 +1,7 @@
 "use strict"
 
 import {toggle_class} from './utils.js'
+import {create_editor} from './editor.js'
 
 const HIDDEN = 'hidden'
 
@@ -29,6 +30,21 @@ export default class UI {
         })
     }
 
+    /**
+     * Creates new instance of editor using provided code as content
+     *
+     * @param {String} value Initial content of editor.
+     *
+     * @returns {Object} Instance of editor.
+     */
+    create_editor(value) {
+        return create_editor(this.dom.editor, value)
+    }
+
+    /**
+     * Toggles sidebar visibility.
+     * @returns {void}
+     */
     toogle_sidebar() {
         toggle_class(this.dom.sidebar, HIDDEN)
     }

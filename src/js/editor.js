@@ -8,9 +8,10 @@ import 'codemirror/lib/codemirror.css'
 CodeMirror.requireMode = function() {}
 CodeMirror.autoLoadMode = function() {}
 
-export function create_editor(dom) {
+export function create_editor(dom, value) {
     return CodeMirror(dom, {
-        value: "#include <iostream>\n\nint main() {\n\tstd::cout << \"Hello, world!\";\n\treturn 0;\n}",
-        mode: "text/x-c++src"
+        value,
+        mode: "text/x-c++src",
+        lineNumbers: true
     })
 }
