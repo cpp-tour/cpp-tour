@@ -5,8 +5,9 @@ node_js:
 
 script:
     - npm run lint
+    - npm run test
     - npm run build:p
 
-after_script:
+after_success:
     - bash ci/deploy.sh
 

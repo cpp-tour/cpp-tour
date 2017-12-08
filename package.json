@@ -5,7 +5,7 @@
     "description": "Front-end for CPP-Tour",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "ava --verbose",
         "lint": "eslint . --ext .js --ignore-pattern public",
         "start": "webpack-dev-server",
         "build": "webpack",
@@ -21,6 +21,8 @@
     "author": "Douman <douman@gmx.se>",
     "license": "MIT",
     "devDependencies": {
+        "ava": "0",
+        "node-fetch": "1",
         "codemirror": "5",
         "webpack": "3",
         "webpack-dev-server": "2",
@@ -47,6 +49,15 @@
         "eslint": "4",
         "eslint-loader": "1",
         "eslint-plugin-compat": "2"
+    },
+    "ava": {
+        "files": [
+            "test/**/*.js"
+        ],
+        "source": [
+            "src/**/*.js"
+        ],
+        "failFast": true
     },
     "babel": {
         "presets": [
