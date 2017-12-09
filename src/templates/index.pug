@@ -17,7 +17,13 @@ body.layout
                 p.
                     Content
             div.main__separator
-            div.main__editor#editor
+            div.main__compiler
+                div.main__compiler__editor#editor
+                div.main__compiler__menu#editor_menu
+                    button.button#reset="Reset"
+                    button.button#run="Run"
+                div.main__compiler__output
+                    pre#output
 
     // Sidebar
     div.sidebar#sidebar.hidden

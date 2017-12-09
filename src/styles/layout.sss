@@ -37,26 +37,55 @@
     flex: 5 0 60%
     display: flex
 
-    @media screen and (max-width: 960px)
-        flex-direction: column
-
 .main__content
     flex: 2 0 40%
     padding: 1em
     overflow: auto
 
 .main__separator
-    flex: 1 0
+    flex: 1 0 10px
     background: #222
     max-width: 10px
 
-    @media screen and (max-width: 960px)
-        max-width: unset
-        max-height: 10px
-
-.main__editor
+.main__compiler
+    display: flex
+    flex-direction: column
     flex: 2 0 40%
+
+.main__compiler__editor
+    flex: 5 0 50%
+    max-height: 70%
     overflow: auto
 
     & > .CodeMirror
         height: 100%
+
+.main__compiler__menu
+    flex: 1
+    max-height: 5em
+    padding: 1em
+    background: #f8f8f8
+    border: 2px solid #e7e7e7
+    text-align: right
+
+    & > .button
+        height: 3em
+        width: 5em
+        margin-left: 1em
+
+        &.running
+            background: teal
+            cursor: progress
+
+.main__compiler__output
+    flex: 3 0 30%
+    max-height: 25%
+    overflow: auto
+
+@media screen and (max-width: 960px)
+    .main
+        flex-direction: column
+
+    .main__separator
+        max-width: unset
+        max-height: 10px
