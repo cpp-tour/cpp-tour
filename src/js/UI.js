@@ -135,7 +135,6 @@ export default class UI {
 
         compile({code})
             .then((response) => {
-                console.log(response)
                 if (response.program_output)
                     this.output(
                         response.status,
