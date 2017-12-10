@@ -36,6 +36,9 @@ export function compile(request) {
     if (!('compiler' in request)) {
         request.compiler = 'gcc-head'
     }
+    if (!('options' in request)) {
+        request.options = '-Wall -Wextra -Wshadow'
+    }
 
     const options = {
         method: 'POST',
@@ -47,6 +50,7 @@ export function compile(request) {
         body: JSON.stringify(request)
     }
 
+    console.log(options)
     // TODO: Should we support IE11?
     // eslint-disable-next-line compat/compat
     return fetch(COMPILE_URL, options).then(handle_response)

@@ -1,5 +1,10 @@
 html
     box-sizing: border-box
+    background: #fafafa
+    text-rendering: optimizeLegibility
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    -moz-font-feature-settings: "liga" on
 
 *,
 ::after,
@@ -8,9 +13,57 @@ html
     box-sizing: inherit
 
 body
-    font-size: 20px
-    font-family: Times New Roman, Times, serif
-    color: #777
+    font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif
+    font-weight: 400
+    font-style: normal
+    font-size: 16px
+    color: #000
+
+.content p
+    font-family: "Merriweather", Georgia, Cambria, "Times New Roman", Times, serif
+    font-weight: 400
+    font-style: normal
+    line-height: 1.45
+    letter-spacing: -.003em
+    padding-top: 1em
+
+.headline,
+h1
+    font-weight: 600
+    font-size: 34px !important
+    margin-left: -2.13px
+    line-height: 1.15
+    letter-spacing: -.015em
+
+h2
+    font-weight: 600
+    font-size: 24px
+    line-height: 1.15
+    letter-spacing: -.015em
+    padding-top: 1em
+
+.subheadline
+    font-weight: 400
+    font-size: 22px
+    color: #0000007f
+    line-height: 1.15
+    padding-bottom: .5em
+
+.content pre
+    font-family: Menlo, "Consolas", Courier, monospace
+    line-height: 1.2em
+    padding: 1em .5em 1em .5em
+    margin: 1em 0 0 0
+    background: #f0f0f0
+
+b
+    font-weight: 600
+
+code
+    font-family: Menlo, "Consolas", Courier, monospace
+    background: #f0f0f0
+    padding: .15em
+
 
 .hidden
     display: none !important
