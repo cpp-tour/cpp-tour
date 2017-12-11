@@ -74,7 +74,7 @@ export default class UI {
      */
     toogle_run() {
         if (toggle_class(this.actions.run, RUNNING)) {
-            this.remove_old()
+            this.remove_old_output()
             this.actions.run.disabled = true
             this.actions.run.innerText = "Working..."
         } else {
@@ -83,7 +83,7 @@ export default class UI {
         }
     }
 
-    remove_old() {
+    remove_old_output() {
         while (this.dom.output.lastChild)
             this.dom.output.removeChild(this.dom.output.lastChild)
         while (this.dom.exitcode.lastChild)
@@ -104,21 +104,19 @@ export default class UI {
     output(code, output, compiler_output) {
         const content = document.createTextNode(`${output}`)
         const exitcode = document.createTextNode(`Program exited with code ${code}.`)
-        const warnings = compiler_output
-            ? document.createTextNode(`${compiler_output}`)
-            : document.createTextNode('')
+        if (compiler_output) {
+            const warnings = document.createTextNode(`${compiler_output}`)
+            this.dom.warnings.appendChild(warnings)
+        }
 
-        this.remove_old()
         this.dom.output.appendChild(content)
         this.dom.exitcode.appendChild(exitcode)
-        this.dom.warnings.appendChild(warnings)
         this.toogle_run()
     }
 
     error(message) {
         const msg = document.createTextNode(`${message}`)
 
-        this.remove_old()
         this.dom.errmsg.appendChild(msg)
         this.toogle_run()
     }
