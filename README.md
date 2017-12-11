@@ -1,4 +1,4 @@
-# A Tour of C++
+![C++ Tour Logo](docs/images/logo.png)
 
 Welcome to the tour of C++.
 
