@@ -5,6 +5,8 @@ const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
+// See TODO at the bottom!
+// const GoogleFontsPlugin = require('google-fonts-webpack-plugin')
 
 const PUBLIC = path.resolve(__dirname, 'public')
 const SRC = path.resolve(__dirname, 'src')
@@ -94,6 +96,14 @@ module.exports.plugins = [
         defaultAttribute: 'async'
     }),
     new ExtractTextPlugin('[name].bundle.[chunkhash].css')
+    // TODO: Need something to do the same with our own bundled fonts!
+    // new GoogleFontsPlugin({
+    //   fonts: [
+    //     { family: 'Source Sans Pro', variants: [ '600' ] },
+    //     { family: 'Merriweather' }
+    //   ],
+    //   path: 'fonts/'
+    // })
 ]
 
 module.exports.devServer = {

@@ -15,6 +15,9 @@ export default class UI {
             sidebar: document.getElementById('sidebar'),
             editor: document.getElementById('editor'),
             output: document.getElementById('output'),
+            exitcode: document.getElementById('exitcode'),
+            errmsg: document.getElementById('errmsg'),
+            warnings: document.getElementById('warnings'),
         }
         this.actions = {
             run: document.getElementById('run'),
@@ -71,7 +74,7 @@ export default class UI {
      */
     toogle_run() {
         if (toggle_class(this.actions.run, RUNNING)) {
-            //added
+            this.remove_old_output()
             this.actions.run.disabled = true
             this.actions.run.innerText = "Working..."
         } else {
@@ -80,21 +83,41 @@ export default class UI {
         }
     }
 
+    remove_old_output() {
+        while (this.dom.output.lastChild)
+            this.dom.output.removeChild(this.dom.output.lastChild)
+        while (this.dom.exitcode.lastChild)
+            this.dom.exitcode.removeChild(this.dom.exitcode.lastChild)
+        while (this.dom.errmsg.lastChild)
+            this.dom.errmsg.removeChild(this.dom.errmsg.lastChild)
+        while (this.dom.warnings.lastChild)
+            this.dom.warnings.removeChild(this.dom.warnings.lastChild)
+    }
+
     /**
      * Adds output to DOM.
      * @param {String} code Exit code of program.
      * @param {String} output Console output of program.
+     * @param {String} compiler_output Console output of the compiler.
      * @returns {void}
      */
-    output(code, output) {
-        const content = output ? document.createTextNode(`${output}\n\nProgram exited with code ${code}`) :
-                                 document.createTextNode(`Program exited with code ${code}`)
-
-        while (this.dom.output.lastChild) {
-            this.dom.output.removeChild(this.dom.output.lastChild)
+    output(code, output, compiler_output) {
+        const content = document.createTextNode(`${output}`)
+        const exitcode = document.createTextNode(`Program exited with code ${code}.`)
+        if (compiler_output) {
+            const warnings = document.createTextNode(`${compiler_output}`)
+            this.dom.warnings.appendChild(warnings)
         }
 
         this.dom.output.appendChild(content)
+        this.dom.exitcode.appendChild(exitcode)
+        this.toogle_run()
+    }
+
+    error(message) {
+        const msg = document.createTextNode(`${message}`)
+
+        this.dom.errmsg.appendChild(msg)
         this.toogle_run()
     }
 
@@ -107,7 +130,17 @@ export default class UI {
         const code = this.editor.getValue()
         //TODO: There is no API to cancel promies.
         //      Needs to think on strategy to do it.
-        compile({code}).then((response) => this.output(response.status, response.program_output))
-                       .catch((error) => this.output('255', error))
+
+        compile({code})
+            .then((response) => {
+                if (response.program_output)
+                    this.output(
+                        response.status,
+                        response.program_output,
+                        response.compiler_message)
+                else
+                    this.error(response.compiler_error)
+            })
+            .catch((error) => this.output('255', error))
     }
 }
