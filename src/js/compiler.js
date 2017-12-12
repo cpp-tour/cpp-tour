@@ -36,6 +36,9 @@ export function compile(request) {
     if (!('compiler' in request)) {
         request.compiler = 'gcc-head'
     }
+    if (!('options' in request)) {
+        request.options = '-Wall -Wextra'
+    }
 
     const options = {
         method: 'POST',

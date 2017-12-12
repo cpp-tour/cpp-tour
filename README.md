@@ -1,6 +1,4 @@
-# A Tour of C++
-
-Welcome to the tour of C++.
+[![C++ Tour Logo](docs/images/logo.png)](https://cpp-tour.com)
 
 [![Build Status](https://travis-ci.org/Leandros/cpp-tour.svg?branch=master)](https://travis-ci.org/Leandros/cpp-tour)
 
