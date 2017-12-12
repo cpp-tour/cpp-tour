@@ -45,7 +45,7 @@ const img_loader = {
 
 const font_loader = {
     test: /\.(eot|ttf|woff|woff2)$/,
-    loader: 'file-loader?name=public/fonts/[name].[ext]'
+    loader: 'file-loader?name=${PUBLIC}/fonts/[name].[ext]'
 }
 
 const js_loader = {
