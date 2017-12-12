@@ -16,3 +16,4 @@ public/
 # Junk
 *-lock.json
 
+.DS_Store
