@@ -113,7 +113,7 @@ export default class UI {
     }
 }
 
-Split(['#aa', '#bb'], {
+Split(['#left_pane', '#right_pane'], {
     gutterSize: 8,
     cursor: 'col-resize'
   })
