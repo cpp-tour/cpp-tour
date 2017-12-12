@@ -8,21 +8,18 @@
     bottom: 0
 
 .layout__header
-    background: #222
+    background: #202020
     flex: 1 0
-    max-height: 2.5em
-    z-index: 500 //To overshadow everything
-    box-shadow: 3px 3px 3px 4px rgba(0, 0, 0, 0.4)
-    //Text properties
-    font-size: 1.25em
+    max-height: 3.1em
+    z-index: 500 // To overshadow everything
     color: white
-    //Elements alignment(both parent and children should use it)
+    // Elements alignment (both parent and children should use it)
     display: inline-block
 
     & > *
         display: inline-block
         font-size: inherit
-        padding: .6em
+        padding: .15em .6em
 
 .layout__header__menu
     cursor: pointer
@@ -32,6 +29,8 @@
 .layout__content
     flex: 2 0
     display: flex
+    // https://stackoverflow.com/questions/28636832#28639686
+    min-height: 0
 
 .main
     flex: 5 0 60%
@@ -84,6 +83,17 @@
     flex: 3 0 30%
     max-height: 25%
     overflow: auto
+    padding: 1em
+
+#exitcode
+    padding-top: 1em
+    color: #0000007f
+
+#errmsg
+    color: #d00a0a
+
+#warnings
+    color: #a22
 
 @media screen and (max-width: 960px)
     .main
@@ -91,4 +101,4 @@
 
     .main__separator
         max-width: unset
-        max-height: 10px
+        max-height: 5px
