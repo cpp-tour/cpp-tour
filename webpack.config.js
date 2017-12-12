@@ -45,6 +45,15 @@ const img_loader = {
     },
 }
 
+const font_loader = {
+    test: /\.(eot|ttf|woff|woff2)$/,
+    loader: 'file-loader',
+    options: {
+        outputPath: "fonts/",
+        name: '[name].[ext]',
+    },
+}
+
 const js_loader = {
     test: /\.jsx?$/,
     use: [
@@ -76,6 +85,7 @@ module.exports.module = {
         sss_loader,
         img_loader,
         json_loader,
+        font_loader,
         js_loader,
         pug_loader,
     ]
