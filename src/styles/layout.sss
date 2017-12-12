@@ -35,21 +35,24 @@
 .main
     flex: 5 0 60%
     display: flex
+    box-sizing: border-box
 
 .main__content
-    flex: 2 0 40%
-    padding: 2em 1.5em
-    overflow: auto
+    padding: 1em
+    box-sizing: border-box
+    overflow-y: auto
+    overflow-x: hidden
 
-.main__separator
-    flex: 1 0 5px
-    background: #202020
-    max-width: 5px
+.gutter
+    flex: 1 0 10px
+    background: #222
+    max-width: 10px
+    cursor: col-resize
 
 .main__compiler
-    display: flex
-    flex-direction: column
-    flex: 2 0 40%
+    box-sizing: border-box
+    overflow-y: auto
+    overflow-x: hidden
 
 .main__compiler__editor
     flex: 5 0 50%
