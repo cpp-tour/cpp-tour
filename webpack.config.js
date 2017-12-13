@@ -5,8 +5,6 @@ const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
-// See TODO at the bottom!
-// const GoogleFontsPlugin = require('google-fonts-webpack-plugin')
 
 const PUBLIC = path.resolve(__dirname, 'public')
 const SRC = path.resolve(__dirname, 'src')
@@ -45,6 +43,15 @@ const img_loader = {
     },
 }
 
+const font_loader = {
+    test: /\.(eot|ttf|woff|woff2)$/,
+    loader: 'file-loader',
+    options: {
+        outputPath: "fonts/",
+        name: '[name].[ext]',
+    },
+}
+
 const js_loader = {
     test: /\.jsx?$/,
     use: [
@@ -76,6 +83,7 @@ module.exports.module = {
         sss_loader,
         img_loader,
         json_loader,
+        font_loader,
         js_loader,
         pug_loader,
     ]
@@ -96,14 +104,6 @@ module.exports.plugins = [
         defaultAttribute: 'async'
     }),
     new ExtractTextPlugin('[name].bundle.[chunkhash].css')
-    // TODO: Need something to do the same with our own bundled fonts!
-    // new GoogleFontsPlugin({
-    //   fonts: [
-    //     { family: 'Source Sans Pro', variants: [ '600' ] },
-    //     { family: 'Merriweather' }
-    //   ],
-    //   path: 'fonts/'
-    // })
 ]
 
 module.exports.devServer = {
