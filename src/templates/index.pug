@@ -3,7 +3,7 @@ include _common.pug
 -
     const links = [
         { title: "Twitter", href: "#1", img: require('../img/icons/twitter.svg')},
-        { title: "Github", href: "#1", img: require('../img/icons/github.svg')},
+        { title: "Github", href: "https://github.com/Leandros/cpp-tour", img: require('../img/icons/github.svg')},
         { title: "Slack", href: "#1", img: require('../img/icons/slack.svg'), target: "_blank"}
     ]
 
@@ -14,7 +14,7 @@ body.layout
     // Page header
     nav.layout__header#header
         a.layout__header__menu(class=['logo'])="C++ Tour"
-        div
+        div.layout__header__icons
             each link in links
                      a.bg__image.layout__icons(title=link.title, href=link.href, target=link.target, style=`background-image: url('${link.img}')`)
     div.layout__content
