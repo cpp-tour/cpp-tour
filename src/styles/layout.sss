@@ -13,11 +13,12 @@
     max-height: 3.1em
     z-index: 500 // To overshadow everything
     color: white
-    // Elements alignment (both parent and children should use it)
-    display: inline-block
+    // This aligns the icons to the far right
+    display: flex
+    justify-content: space-between
 
     & > *
-        display: inline-block
+        display: flex
         font-size: inherit
         padding: .15em .6em
 
@@ -25,6 +26,11 @@
     cursor: pointer
     &:hover
         background: #333
+
+.layout__header__icon
+    margin: 0 0.625em 0 0.625em
+    height: 3em
+    width: 3em
 
 .layout__content
     flex: 2 0
