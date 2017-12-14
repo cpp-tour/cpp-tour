@@ -2,9 +2,9 @@ include _common.pug
 +head(title="C++ Tour")
 -
     const links = [
-        { title: "Twitter", href: "#1", img: require('../img/icons/twitter.svg')},
+        { title: "Twitter", href: "https://twitter.com/ArvidGerstmann", img: require('../img/icons/twitter.svg')},
         { title: "Github", href: "https://github.com/Leandros/cpp-tour", img: require('../img/icons/github.svg')},
-        { title: "Slack", href: "#1", img: require('../img/icons/slack.svg'), target: "_blank"}
+        { title: "Slack", href: "https://cpplang.now.sh", img: require('../img/icons/slack.svg'), target: "_blank"}
     ]
 
 mixin sidebar_link(id, title)
@@ -16,7 +16,7 @@ body.layout
         a.layout__header__menu(class=['logo'])="C++ Tour"
         div
             each link in links
-                     a.bg-image.layout__header__icon(title=link.title, href=link.href, target=link.target, style=`background-image: url('${link.img}')`)
+                a.bg-image.layout__header__icon(title=link.title, href=link.href, target=link.target, style=`background-image: url('${link.img}')`)
     div.layout__content
         // Content
         div.main#main
@@ -36,7 +36,7 @@ body.layout
                     The following is code: <code>int</code>. More code: <code>char **argv</code>. Suspendisse tincidunt felis sit amet pulvinar suscipit. Curabitur sit amet ante rhoncus, interdum enim ac, sodales nibh. Proin mauris diam, iaculis in suscipit vel, aliquet a ante. Quisque sapien felis, finibus at nunc a, lacinia ornare nunc. Fusce sollicitudin suscipit tempor. Mauris vel bibendum ex. Nullam finibus mi ut dui sodales, quis bibendum enim consectetur. Vivamus elementum urna et sem vulputate, vel rutrum ante faucibus. Fusce non nisl interdum, vehicula mi sit amet, imperdiet ex. Morbi dignissim ultrices leo, vitae scelerisque diam malesuada sit amet. Aliquam congue odio ut risus posuere, mollis mattis ante semper. Phasellus id arcu nec turpis egestas semper. Nunc in nisi tincidunt, sodales justo vitae, consectetur enim.
                 p.
                     Aenean <b>vestibulum</b>, nisl sed hendrerit eleifend, ipsum nibh facilisis augue, vel facilisis sapien augue eget ante. Mauris sit amet varius elit. Duis et orci rutrum, blandit ligula id, pellentesque arcu. Nam aliquam turpis ac sollicitudin maximus. Ut aliquam justo sed odio rhoncus porttitor. Fusce augue metus, pulvinar sit amet tortor vel, condimentum porta lectus. Donec diam justo, facilisis sed dui sit amet, eleifend pellentesque mauris. Cras quis nunc vitae justo elementum egestas. Sed quis congue sapien. Suspendisse aliquam purus sem, ut tempor lorem dapibus nec. Curabitur at elit fringilla, ultricies dolor quis, iaculis magna.
-            
+
             div.main__compiler#right_pane
                 div.main__compiler__editor#editor
                 div.main__compiler__menu#editor_menu
