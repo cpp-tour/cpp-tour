@@ -16,7 +16,7 @@ body.layout
         a.layout__header__menu(class=['logo'])="C++ Tour"
         div.layout__header__icons
             each link in links
-                     a.bg__image.layout__icons(title=link.title, href=link.href, target=link.target, style=`background-image: url('${link.img}')`)
+                     a.layout__header__icons--bg.layout__header__icons--size(title=link.title, href=link.href, target=link.target, style=`background-image: url('${link.img}')`)
     div.layout__content
         // Content
         div.main#main
