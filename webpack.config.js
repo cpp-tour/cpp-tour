@@ -1,5 +1,7 @@
 "use strict"
 
+const IS_DEV_SERVER = process.argv.find(arg => arg.includes('webpack-dev-server'))
+
 const path = require('path')
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -8,6 +10,7 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 
 const PUBLIC = path.resolve(__dirname, 'public')
 const SRC = path.resolve(__dirname, 'src')
+const lessons = require('./webpack/get_lessons.js')()
 
 const css_loader = {
     test: /\.css/,
@@ -52,12 +55,32 @@ const font_loader = {
     },
 }
 
+// Require returns raw content of files.
+const raw_loader = {
+    test: /\.(cpp)$/,
+    use: 'raw-loader'
+}
+
+const asciidoc_loader = {
+    test: /\.(adoc)$/,
+    use: [
+        'html-loader',
+        'asciidoctor-loader?attributes=showtitle'
+    ]
+}
+
 const js_loader = {
     test: /\.jsx?$/,
+    exclude: /(node_modules|bower_components)/,
     use: [
         "babel-loader",
-        "eslint-loader"
     ]
+}
+
+// eslint-loader cannot be currently used with dev server with potential bug in object-hash dependency.
+// https://github.com/puleos/object-hash/issues/61
+if (!IS_DEV_SERVER) {
+    js_loader.use.push('eslint-loader')
 }
 
 const pug_loader = {
@@ -86,6 +109,8 @@ module.exports.module = {
         font_loader,
         js_loader,
         pug_loader,
+        raw_loader,
+        asciidoc_loader
     ]
 }
 
@@ -99,7 +124,11 @@ function html_pug_plug(title, template, opts) {
 }
 
 module.exports.plugins = [
-    html_pug_plug("A Tour of C++", "templates/index.pug"),
+    // Inject lessons index through options.
+    // Template can access them through htmlWebpackPlugin.options.lessons
+    html_pug_plug("A Tour of C++", "templates/index.pug", {
+        lessons
+    }),
     new ScriptExtHtmlWebpackPlugin({
         defaultAttribute: 'async'
     }),
