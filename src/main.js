@@ -5,8 +5,16 @@ import UI from './js/UI.js'
 import './styles/main.sss'
 
 window.addEventListener("load", function() {
-    const CODE = "#include <iostream>\n\nint main() {\n\tstd::cout << \"Hello, world!\";\n\treturn 0;\n}"
     const ui = new UI()
 
-    /*const code_editor =*/ ui.create_editor(CODE)
+    function on_hash_change() {
+        const code = window.LESSONS[location.hash.slice(1)]
+        if (code !== undefined) {
+            ui.create_editor(code)
+        }
+    }
+
+    window.addEventListener('hashchange', on_hash_change)
+
+    on_hash_change()
 })
