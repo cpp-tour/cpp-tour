@@ -3,7 +3,7 @@
 import {compile} from './compiler.js'
 import {toggle_class} from './utils.js'
 import {create_editor} from './editor.js'
-import Split from 'split.js'
+import {drag} from './dragging.js'
 
 const HIDDEN = 'hidden'
 const RUNNING = 'running'
@@ -146,7 +146,6 @@ export default class UI {
     }
 }
 
-Split(['#left_pane', '#right_pane'], {
-    gutterSize: 8,
-    cursor: 'col-resize'
-  })
+if (window.innerWidth > 960) {
+    drag()
+}
