@@ -5,7 +5,6 @@ import {toggle_class} from './utils.js'
 import {create_editor} from './editor.js'
 import {drag} from './dragging.js'
 
-
 const HIDDEN = 'hidden'
 const RUNNING = 'running'
 
@@ -150,4 +149,3 @@ export default class UI {
 if (window.innerWidth > 960) {
     drag()
 }
-
