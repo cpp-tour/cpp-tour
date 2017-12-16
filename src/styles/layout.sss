@@ -13,11 +13,12 @@
     max-height: 3.1em
     z-index: 500 // To overshadow everything
     color: white
-    // Elements alignment (both parent and children should use it)
-    display: inline-block
+    // This aligns the icons to the far right
+    display: flex
+    justify-content: space-between
 
     & > *
-        display: inline-block
+        display: flex
         font-size: inherit
         padding: .15em .6em
 
@@ -25,6 +26,11 @@
     cursor: pointer
     &:hover
         background: #333
+
+.layout__header__icon
+    margin: 0 0.35em 0 0.35em
+    height: 3em
+    width: 3em
 
 .layout__content
     flex: 2 0
@@ -35,32 +41,32 @@
 .main
     flex: 5 0 60%
     display: flex
+    overflow: scroll
 
 .main__content
-    flex: 2 0 40%
-    padding: 2em 1.5em
     overflow: auto
+    padding: 1em
 
 .main__separator
-    flex: 1 0 5px
+    flex: 1 0 10px
     background: #202020
-    max-width: 5px
+    max-width: 10px
 
 .main__compiler
     display: flex
     flex-direction: column
-    flex: 2 0 40%
+    flex: 2 0 30%
+    margin-bottom: 1opx
 
 .main__compiler__editor
     flex: 5 0 50%
     max-height: 70%
-    overflow: auto
-
     & > .CodeMirror
         height: 100%
 
 .main__compiler__menu
     flex: 1
+    overflow: none
     max-height: 5em
     padding: 1em
     background: #f8f8f8
@@ -79,7 +85,6 @@
 .main__compiler__output
     flex: 3 0 30%
     max-height: 25%
-    overflow: auto
     padding: 1em
 
 #exitcode
@@ -95,7 +100,12 @@
 @media screen and (max-width: 960px)
     .main
         flex-direction: column
-
+    .main__content
+        overflow: visible
     .main__separator
         max-width: unset
         max-height: 5px
+
+@media screen and (max-width: 600px)
+    .main__content
+        overflow: visible
