@@ -24,6 +24,7 @@
     "license": "MIT",
     "dependencies": {
         "codemirror": "5",
+        "ansi_up": "2",
         "split.js": "^1.3.5"
     },
     "devDependencies": {

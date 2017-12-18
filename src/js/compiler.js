@@ -34,10 +34,10 @@ export function compile(request) {
         throw "No code field in request!"
     }
     if (!('compiler' in request)) {
-        request.compiler = 'gcc-head'
+        request.compiler = 'clang-head'
     }
     if (!('options' in request)) {
-        request.options = '-Wall -Wextra'
+        request.options = 'warning,boost-1.65.1-clang-head,c++1z,cpp-pedantic'
     }
 
     const options = {
