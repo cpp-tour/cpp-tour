@@ -72,5 +72,8 @@
     "browserslist": [
         "Last 2 versions",
         "ie 11"
-    ]
+    ],
+    "dependencies": {
+        "split.js": "^1.3.5"
+    }
 }
