@@ -6,7 +6,9 @@
     "main": "index.js",
     "scripts": {
         "test": "ava --verbose",
-        "lint": "eslint . --ext .js --ignore-pattern public",
+        "lint:style": "stylelint src/styles",
+        "lint:js": "eslint . --ext .js --ignore-pattern public",
+        "lint": "npm run lint:style && npm run lint:js",
         "start": "webpack-dev-server",
         "build": "webpack",
         "build:p": "webpack -p",
@@ -20,13 +22,18 @@
     "keywords": [],
     "author": "Douman <douman@gmx.se>",
     "license": "MIT",
+    "dependencies": {
+        "codemirror": "5",
+        "split.js": "^1.3.5"
+    },
     "devDependencies": {
+        "html-loader": "0",
+        "asciidoctor-loader": "0",
         "autoprefixer": "7",
         "ava": "0",
         "babel-core": "6",
         "babel-loader": "7",
         "babel-preset-env": "1",
-        "codemirror": "5",
         "css-loader": "0",
         "eslint": "4",
         "eslint-loader": "1",

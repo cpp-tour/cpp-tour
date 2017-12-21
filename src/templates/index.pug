@@ -1,34 +1,60 @@
 include _common.pug
 +head(title="C++ Tour")
 
+-
+    const links = [
+        { title: "Twitter", href: "https://twitter.com/ArvidGerstmann", img: require('../img/icons/twitter.svg')},
+        { title: "Github", href: "https://github.com/Leandros/cpp-tour", img: require('../img/icons/github.svg')},
+        { title: "Slack", href: "https://cpplang.now.sh", img: require('../img/icons/slack.svg'), target: "_blank"}
+    ]
+    const default_page = {
+        code: require('../../lessons/default/code.cpp'),
+        text: require('../../lessons/default/text.adoc')
+    }
+    const lessons = htmlWebpackPlugin.options.lessons.map((lesson) => {
+        // Return new object to avoid modifying original lessons data
+        return {
+            id: `${lesson.num_str}-${lesson.name.replace(' ', '-')}`,
+            code: require('../../lessons/' + lesson.dir_name + '/code.cpp'),
+            text: require('../../lessons/' + lesson.dir_name + '/text.adoc'),
+            num: lesson.num_str,
+            name: lesson.name
+        }
+    })
+
+    let lessons_code = {
+        '': default_page.code
+    }
+
+    for (lesson of lessons) {
+        lessons_code[lesson.id] = lesson.code
+    }
+
 mixin sidebar_link(id, title)
-    a.sidebar__item(id=id href="#"+id)=title
+    a.sidebar__item(href="#"+id)=title
+
+// Init code data
+script.
+    window.LESSONS = !{JSON.stringify(lessons_code)}
 
 body.layout
     // Page header
     nav.layout__header#header
-        a.layout__header__menu(class=['logo'])="C++ Tour"
+        a.layout__header__menu.logo="C++ Tour"
+        div
+            each link in links
+                a.bg-image.layout__header__icon(title=link.title, href=link.href, target=link.target, style=`background-image: url('${link.img}')`)
     div.layout__content
         // Content
         div.main#main
-            div.main__content(class=['content'])
-                h1.headline="Headline"
-                .subheadline="Subheadline"
-                p.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean diam augue, viverra at rhoncus at, euismod sit amet turpis. Maecenas tellus elit, vehicula vel est quis, efficitur venenatis turpis. Sed faucibus lacus ac nisl malesuada rhoncus. Cras non urna laoreet, consectetur libero at, pharetra lacus. Curabitur tellus nulla, accumsan quis ex nec, lacinia vulputate quam. Curabitur consequat orci in nulla dignissim, auctor blandit ipsum mollis. Maecenas a lobortis ligula.
-                h2.
-                    Code Example
-                pre.
-                    int main(int argc, char **argv)
-                    {
-                        return 0;
-                    }
-                p.
-                    The following is code: <code>int</code>. More code: <code>char **argv</code>. Suspendisse tincidunt felis sit amet pulvinar suscipit. Curabitur sit amet ante rhoncus, interdum enim ac, sodales nibh. Proin mauris diam, iaculis in suscipit vel, aliquet a ante. Quisque sapien felis, finibus at nunc a, lacinia ornare nunc. Fusce sollicitudin suscipit tempor. Mauris vel bibendum ex. Nullam finibus mi ut dui sodales, quis bibendum enim consectetur. Vivamus elementum urna et sem vulputate, vel rutrum ante faucibus. Fusce non nisl interdum, vehicula mi sit amet, imperdiet ex. Morbi dignissim ultrices leo, vitae scelerisque diam malesuada sit amet. Aliquam congue odio ut risus posuere, mollis mattis ante semper. Phasellus id arcu nec turpis egestas semper. Nunc in nisi tincidunt, sodales justo vitae, consectetur enim.
-                p.
-                    Aenean <b>vestibulum</b>, nisl sed hendrerit eleifend, ipsum nibh facilisis augue, vel facilisis sapien augue eget ante. Mauris sit amet varius elit. Duis et orci rutrum, blandit ligula id, pellentesque arcu. Nam aliquam turpis ac sollicitudin maximus. Ut aliquam justo sed odio rhoncus porttitor. Fusce augue metus, pulvinar sit amet tortor vel, condimentum porta lectus. Donec diam justo, facilisis sed dui sit amet, eleifend pellentesque mauris. Cras quis nunc vitae justo elementum egestas. Sed quis congue sapien. Suspendisse aliquam purus sem, ut tempor lorem dapibus nec. Curabitur at elit fringilla, ultricies dolor quis, iaculis magna.
-            div.main__separator
-            div.main__compiler
+            div.main__content.content#left_pane
+                each lesson in lessons
+                    div.sub_page(id=lesson.id)!=lesson.text
+
+                // Defaut page. Must be last.
+                div.sub_page.default!=default_page.text
+
+            div.main__compiler#right_pane
                 div.main__compiler__editor#editor
                 div.main__compiler__menu#editor_menu
                     button.button#reset="Reset"
@@ -41,7 +67,7 @@ body.layout
 
     // Sidebar
     div.sidebar#sidebar.hidden
-        +sidebar_link("Introduction", "Introduction")
-        +sidebar_link("0", "Lesson 0: Getting Started")
+        each lesson in lessons
+            +sidebar_link(lesson.id, `${lesson.num}: ${lesson.name}`)
 
     +noscript

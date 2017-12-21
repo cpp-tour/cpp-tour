@@ -96,3 +96,19 @@ code
         &:active
             box-shadow: unset
             transform: unset
+
+.bg-image
+    background-size: contain
+
+div.sub_page
+    display: none
+
+    &.default
+        display: block
+
+    &:target
+        display: block
+
+        //.default MUST come before any target
+        & ~ div.default
+            display: none
