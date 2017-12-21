@@ -42,16 +42,17 @@
     flex: 5 0 60%
     display: flex
     flex-direction: row
-    overflow: scroll
+    overflow: auto
 
 .main__content
-    overflow: auto
+    overflow-y: auto
     padding: 1em
 
 .gutter
     flex: 1 0 10px
     background: #202020
     max-width: 10px
+    cursor: col-resize
 
 .main__compiler
     box-sizing: border-box
@@ -64,7 +65,7 @@
 
 .main__compiler__editor
     flex: 5 0 50%
-    max-height: 70%
+    overflow: auto
     & > .CodeMirror
         height: 100%
 
@@ -89,6 +90,7 @@
 .main__compiler__output
     flex: 3 0 30%
     max-height: 25%
+    overflow: auto
     padding: 1em
 
 #exitcode
@@ -106,6 +108,10 @@
         flex-direction: column
     .main__content
         overflow: visible
-    .main__separator
-        max-width: unset
-        max-height: 5px
+    .main__compiler
+        border-top: 10px solid black
+        overflow: visible
+    .main__compiler__editor
+        overflow: visible
+    .main__compiler__output
+        overflow: visible
