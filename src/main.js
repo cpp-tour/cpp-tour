@@ -8,9 +8,16 @@ import './styles/main.sss'
 window.addEventListener("load", function() {
     const ui = new UI()
 
-    /*const code_editor =*/ ui.create_editor(CODE)
+    function on_hash_change() {
+        const code = window.LESSONS[location.hash.slice(1)]
+        if (code !== undefined) {
+            ui.create_editor(code)
+        }
+    }
 
-    resize()
+    window.addEventListener('hashchange', on_hash_change)
     window.addEventListener('resize', resize)
 
+    on_hash_change()
+    resize()
 })
