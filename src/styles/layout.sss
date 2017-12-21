@@ -41,13 +41,12 @@
 .main
     flex: 5 0 60%
     display: flex
-    box-sizing: border-box
+    flex-direction: row
+    overflow: auto
 
 .main__content
-    padding: 1em
-    box-sizing: border-box
     overflow-y: auto
-    overflow-x: hidden
+    padding: 1em
 
 .gutter
     flex: 1 0 10px
@@ -62,17 +61,17 @@
     display: flex
     flex-direction: column
     flex: 2 0 30%
+    margin-bottom: 10px
 
 .main__compiler__editor
     flex: 5 0 50%
-    max-height: 70%
     overflow: auto
-
     & > .CodeMirror
         height: 100%
 
 .main__compiler__menu
     flex: 1
+    overflow: none
     max-height: 5em
     padding: 1em
     background: #f8f8f8
@@ -107,7 +106,12 @@
 @media screen and (max-width: 960px)
     .main
         flex-direction: column
-
-    .main__separator
-        max-width: unset
-        max-height: 5px
+    .main__content
+        overflow: visible
+    .main__compiler
+        border-top: 10px solid black
+        overflow: visible
+    .main__compiler__editor
+        overflow: visible
+    .main__compiler__output
+        overflow: visible
