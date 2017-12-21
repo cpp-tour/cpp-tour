@@ -4,6 +4,7 @@ import {compile} from './compiler.js'
 import {toggle_class} from './utils.js'
 import {create_editor} from './editor.js'
 
+const ACTIVE = 'active'
 const HIDDEN = 'hidden'
 const RUNNING = 'running'
 
@@ -36,10 +37,30 @@ export default class UI {
             }
         })
 
+        this.dom.sidebar.addEventListener('click', (event) => {
+            const target = event.target
+
+            if (target.href) {
+                for (let link of target.parentNode.children) {
+                    link.classList.remove(ACTIVE)
+                }
+
+                target.classList.add(ACTIVE)
+            }
+        })
+
+        for (let link of this.dom.sidebar.children) {
+            const hash = link.href.split("#")[1]
+
+            if (hash === location.hash.slice(1)) {
+                link.classList.add(ACTIVE)
+                break
+            }
+        }
+
         this.dom.sidebar_toogle.addEventListener('click', () => this.toogle_sidebar())
 
-        this._run = () => this.run()
-        this.actions.run.addEventListener('click', this._run)
+        this.actions.run.addEventListener('click', () => this.run())
     }
 
     /**
@@ -50,6 +71,9 @@ export default class UI {
      * @returns {Object} Instance of editor.
      */
     create_editor(value) {
+        while (this.dom.editor.lastChild)
+            this.dom.editor.removeChild(this.dom.editor.lastChild)
+
         this.actions.reset.removeEventListener('click', this.editor_reset)
         this.editor_reset = () => this.editor.getDoc().setValue(value)
 
