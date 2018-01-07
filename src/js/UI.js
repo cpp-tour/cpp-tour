@@ -3,7 +3,12 @@
 import {compile} from './compiler.js'
 import {toggle_class} from './utils.js'
 import {create_editor} from './editor.js'
+
 import Split from 'split.js'
+import ansi_up from "ansi_up"
+
+const ANSI = new ansi_up()
+ANSI.use_classes = true
 
 const ACTIVE = 'active'
 const HIDDEN = 'hidden'
@@ -130,8 +135,8 @@ export default class UI {
         const content = document.createTextNode(`${output}`)
         const exitcode = document.createTextNode(`Program exited with code ${code}.`)
         if (compiler_output) {
-            const warnings = document.createTextNode(`${compiler_output}`)
-            this.dom.warnings.appendChild(warnings)
+            const compiler_output_html_str = ANSI.ansi_to_html(compiler_output)
+            this.dom.warnings.innerHTML = compiler_output_html_str
         }
 
         this.dom.output.appendChild(content)
@@ -140,9 +145,9 @@ export default class UI {
     }
 
     error(message) {
-        const msg = document.createTextNode(`${message}`)
+        const html_str = ANSI.ansi_to_html(message)
 
-        this.dom.errmsg.appendChild(msg)
+        this.dom.errmsg.innerHTML = html_str
         this.toogle_run()
     }
 
