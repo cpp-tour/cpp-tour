@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/img/error.5f220f49.png"
   },
   {
-    "revision": "71654aa6d03c74f27a0d43f5b04efefe",
+    "revision": "4fd86cd341f450923d1971c8b28c16d5",
     "url": "/index.html"
   },
   {
