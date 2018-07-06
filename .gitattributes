@@ -10,12 +10,13 @@
 *.hxx text
 *.cxx text
 *.sh text
-*.js text
-*.yml text
-*.pug text
-*.css text
-*.sss text
 *.json text
+*.js text
+*.ts text
+*.vue text
+*.txt text
+*.scss text
+*.md text
 
 # Windows specific files should retain windows line-endings
 *.sln text eol=crlf
