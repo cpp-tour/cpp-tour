@@ -1,0 +1,50 @@
+{
+  "name": "cpp-tour",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "buefy": "^0.6.6",
+    "clipboard": "^2.0.1",
+    "codemirror": "^5.38.0",
+    "hamburgers": "^0.9.3",
+    "vue": "^2.5.16",
+    "vue-class-component": "^6.0.0",
+    "vue-property-decorator": "^6.0.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
+    "vuex-persistedstate": "^2.5.4",
+    "whatwg-fetch": "^2.0.4"
+  },
+  "devDependencies": {
+    "@types/clipboard": "^2.0.0",
+    "@types/codemirror": "^0.0.57",
+    "@types/jest": "^22.0.1",
+    "@types/webpack": "^4.4.4",
+    "@types/webpack-env": "^1.13.6",
+    "@vue/cli-plugin-babel": "^3.0.0-beta.15",
+    "@vue/cli-plugin-typescript": "^3.0.0-beta.15",
+    "@vue/cli-plugin-unit-jest": "^3.0.0-beta.15",
+    "@vue/cli-service": "^3.0.0-beta.15",
+    "@vue/test-utils": "^1.0.0-beta.16",
+    "babel-core": "7.0.0-bridge.0",
+    "html-loader": "^0.5.5",
+    "markdown-loader": "^3.0.0",
+    "node-sass": "^4.9.0",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^7.0.1",
+    "ts-jest": "^22.4.6",
+    "vue-template-compiler": "^2.5.16",
+    "workbox-webpack-plugin": "^3.3.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

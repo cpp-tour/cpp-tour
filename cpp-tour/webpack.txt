@@ -1,0 +1,1128 @@
+{
+  mode: 'development',
+  context: 'C:\\Users\\leandros\\github\\cpp-tour-new',
+  devtool: 'cheap-module-eval-source-map',
+  node: {
+    setImmediate: false,
+    process: 'mock',
+    dgram: 'empty',
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty',
+    child_process: 'empty'
+  },
+  output: {
+    path: 'C:\\Users\\leandros\\github\\cpp-tour-new\\dist',
+    filename: '[name].js',
+    publicPath: '/'
+  },
+  resolve: {
+    symlinks: false,
+    alias: {
+      '@': 'C:\\Users\\leandros\\github\\cpp-tour-new\\src',
+      vue$: 'vue/dist/vue.esm.js'
+    },
+    extensions: [
+      '.js',
+      '.jsx',
+      '.vue',
+      '.json',
+      '.ts',
+      '.tsx'
+    ],
+    modules: [
+      'node_modules',
+      'C:\\Users\\leandros\\github\\cpp-tour-new\\node_modules',
+      'C:\\Users\\leandros\\github\\cpp-tour-new\\node_modules\\@vue\\cli-service\\node_modules'
+    ]
+  },
+  resolveLoader: {
+    modules: [
+      'node_modules',
+      'C:\\Users\\leandros\\github\\cpp-tour-new\\node_modules',
+      'C:\\Users\\leandros\\github\\cpp-tour-new\\node_modules\\@vue\\cli-service\\node_modules'
+    ]
+  },
+  module: {
+    noParse: /^(vue|vue-router|vuex|vuex-router-sync)$/,
+    rules: [
+      {
+        test: /\.vue$/,
+        use: [
+          {
+            loader: 'cache-loader',
+            options: {
+              cacheDirectory: 'C:\\Users\\leandros\\github\\cpp-tour-new\\node_modules\\.cache\\vue-loader',
+              cacheIdentifier: '8407f6e2'
+            }
+          },
+          {
+            loader: 'vue-loader',
+            options: {
+              compilerOptions: {
+                preserveWhitespace: false
+              },
+              cacheDirectory: 'C:\\Users\\leandros\\github\\cpp-tour-new\\node_modules\\.cache\\vue-loader',
+              cacheIdentifier: '8407f6e2'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(png|jpe?g|gif|webp)(\?.*)?$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 4096,
+              name: 'img/[name].[hash:8].[ext]'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(svg)(\?.*)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'img/[name].[hash:8].[ext]'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 4096,
+              name: 'media/[name].[hash:8].[ext]'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 4096,
+              name: 'fonts/[name].[hash:8].[ext]'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.pug$/,
+        use: [
+          {
+            loader: 'pug-plain-loader'
+          }
+        ]
+      },
+      {
+        test: /\.css$/,
+        oneOf: [
+          {
+            resourceQuery: /module/,
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 2,
+                  modules: true,
+                  localIdentName: '[name]_[local]_[hash:base64:5]'
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              }
+            ]
+          },
+          {
+            resourceQuery: /\?vue/,
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 2
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              }
+            ]
+          },
+          {
+            test: /\.module\.\w+$/,
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 2,
+                  modules: true,
+                  localIdentName: '[name]_[local]_[hash:base64:5]'
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              }
+            ]
+          },
+          {
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 2
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        test: /\.p(ost)?css$/,
+        oneOf: [
+          {
+            resourceQuery: /module/,
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 2,
+                  modules: true,
+                  localIdentName: '[name]_[local]_[hash:base64:5]'
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              }
+            ]
+          },
+          {
+            resourceQuery: /\?vue/,
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 2
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              }
+            ]
+          },
+          {
+            test: /\.module\.\w+$/,
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 2,
+                  modules: true,
+                  localIdentName: '[name]_[local]_[hash:base64:5]'
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              }
+            ]
+          },
+          {
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 2
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        test: /\.scss$/,
+        oneOf: [
+          {
+            resourceQuery: /module/,
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 3,
+                  modules: true,
+                  localIdentName: '[name]_[local]_[hash:base64:5]'
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                  sourceMap: false,
+                  data: '@import "src/styles/base.scss";'
+                }
+              }
+            ]
+          },
+          {
+            resourceQuery: /\?vue/,
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 3
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                  sourceMap: false,
+                  data: '@import "src/styles/base.scss";'
+                }
+              }
+            ]
+          },
+          {
+            test: /\.module\.\w+$/,
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 3,
+                  modules: true,
+                  localIdentName: '[name]_[local]_[hash:base64:5]'
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                  sourceMap: false,
+                  data: '@import "src/styles/base.scss";'
+                }
+              }
+            ]
+          },
+          {
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 3
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                  sourceMap: false,
+                  data: '@import "src/styles/base.scss";'
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        test: /\.sass$/,
+        oneOf: [
+          {
+            resourceQuery: /module/,
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 3,
+                  modules: true,
+                  localIdentName: '[name]_[local]_[hash:base64:5]'
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                  sourceMap: false,
+                  indentedSyntax: true,
+                  data: '@import "src/styles/base.scss";'
+                }
+              }
+            ]
+          },
+          {
+            resourceQuery: /\?vue/,
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 3
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                  sourceMap: false,
+                  indentedSyntax: true,
+                  data: '@import "src/styles/base.scss";'
+                }
+              }
+            ]
+          },
+          {
+            test: /\.module\.\w+$/,
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 3,
+                  modules: true,
+                  localIdentName: '[name]_[local]_[hash:base64:5]'
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                  sourceMap: false,
+                  indentedSyntax: true,
+                  data: '@import "src/styles/base.scss";'
+                }
+              }
+            ]
+          },
+          {
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 3
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                  sourceMap: false,
+                  indentedSyntax: true,
+                  data: '@import "src/styles/base.scss";'
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        test: /\.less$/,
+        oneOf: [
+          {
+            resourceQuery: /module/,
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 3,
+                  modules: true,
+                  localIdentName: '[name]_[local]_[hash:base64:5]'
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              },
+              {
+                loader: 'less-loader',
+                options: {
+                  sourceMap: false
+                }
+              }
+            ]
+          },
+          {
+            resourceQuery: /\?vue/,
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 3
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              },
+              {
+                loader: 'less-loader',
+                options: {
+                  sourceMap: false
+                }
+              }
+            ]
+          },
+          {
+            test: /\.module\.\w+$/,
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 3,
+                  modules: true,
+                  localIdentName: '[name]_[local]_[hash:base64:5]'
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              },
+              {
+                loader: 'less-loader',
+                options: {
+                  sourceMap: false
+                }
+              }
+            ]
+          },
+          {
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 3
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              },
+              {
+                loader: 'less-loader',
+                options: {
+                  sourceMap: false
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        test: /\.styl(us)?$/,
+        oneOf: [
+          {
+            resourceQuery: /module/,
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 3,
+                  modules: true,
+                  localIdentName: '[name]_[local]_[hash:base64:5]'
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              },
+              {
+                loader: 'stylus-loader',
+                options: {
+                  sourceMap: false,
+                  preferPathResolver: 'webpack'
+                }
+              }
+            ]
+          },
+          {
+            resourceQuery: /\?vue/,
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 3
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              },
+              {
+                loader: 'stylus-loader',
+                options: {
+                  sourceMap: false,
+                  preferPathResolver: 'webpack'
+                }
+              }
+            ]
+          },
+          {
+            test: /\.module\.\w+$/,
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 3,
+                  modules: true,
+                  localIdentName: '[name]_[local]_[hash:base64:5]'
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              },
+              {
+                loader: 'stylus-loader',
+                options: {
+                  sourceMap: false,
+                  preferPathResolver: 'webpack'
+                }
+              }
+            ]
+          },
+          {
+            use: [
+              {
+                loader: 'vue-style-loader',
+                options: {
+                  sourceMap: false,
+                  shadowMode: false
+                }
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: false,
+                  sourceMap: false,
+                  importLoaders: 3
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: false
+                }
+              },
+              {
+                loader: 'stylus-loader',
+                options: {
+                  sourceMap: false,
+                  preferPathResolver: 'webpack'
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        test: /\.jsx?$/,
+        exclude: [
+          function () { /* omitted long function */ }
+        ],
+        use: [
+          {
+            loader: 'cache-loader',
+            options: {
+              cacheDirectory: 'C:\\Users\\leandros\\github\\cpp-tour-new\\node_modules\\.cache\\babel-loader',
+              cacheIdentifier: '72bd1711'
+            }
+          },
+          {
+            loader: 'babel-loader'
+          }
+        ]
+      },
+      {
+        test: /\.ts$/,
+        use: [
+          {
+            loader: 'cache-loader',
+            options: {
+              cacheDirectory: 'C:\\Users\\leandros\\github\\cpp-tour-new\\node_modules\\.cache\\ts-loader',
+              cacheIdentifier: '61681289'
+            }
+          },
+          {
+            loader: 'babel-loader'
+          },
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true,
+              appendTsSuffixTo: [
+                '\\.vue$'
+              ],
+              happyPackMode: false
+            }
+          }
+        ]
+      },
+      {
+        test: /\.tsx$/,
+        use: [
+          {
+            loader: 'cache-loader',
+            options: {
+              cacheDirectory: 'C:\\Users\\leandros\\github\\cpp-tour-new\\node_modules\\.cache\\ts-loader',
+              cacheIdentifier: '61681289'
+            }
+          },
+          {
+            loader: 'babel-loader'
+          },
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true,
+              happyPackMode: false,
+              appendTsxSuffixTo: [
+                '\\.vue$'
+              ]
+            }
+          }
+        ]
+      },
+      {
+        test: /\.cpp|\.h$/,
+        use: 'raw-loader'
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'html-loader'
+          },
+          {
+            loader: 'markdown-loader',
+            options: {
+              renderer: {
+                options: {
+                  baseUrl: null,
+                  breaks: false,
+                  gfm: true,
+                  headerIds: true,
+                  headerPrefix: '',
+                  highlight: null,
+                  langPrefix: 'language-',
+                  mangle: true,
+                  pedantic: false,
+                  renderer: {
+                    options: undefined
+                  },
+                  sanitize: false,
+                  sanitizer: null,
+                  silent: false,
+                  smartLists: false,
+                  smartypants: false,
+                  tables: true,
+                  xhtml: false
+                },
+                link: function () { /* omitted long function */ },
+                code: function () { /* omitted long function */ }
+              },
+              pedantic: false,
+              smartypants: true
+            }
+          }
+        ]
+      }
+    ]
+  },
+  plugins: [
+    /* config.plugin('vue-loader') */
+    new VueLoaderPlugin(),
+    /* config.plugin('define') */
+    new DefinePlugin(
+      {
+        'process.env': {
+          NODE_ENV: '"development"',
+          BASE_URL: '"/"'
+        }
+      }
+    ),
+    /* config.plugin('case-sensitive-paths') */
+    new CaseSensitivePathsPlugin(),
+    /* config.plugin('friendly-errors') */
+    new FriendlyErrorsWebpackPlugin(
+      {
+        additionalTransformers: [
+          function () { /* omitted long function */ }
+        ],
+        additionalFormatters: [
+          function () { /* omitted long function */ }
+        ]
+      }
+    ),
+    /* config.plugin('hmr') */
+    new HotModuleReplacementPlugin(),
+    /* config.plugin('no-emit-on-errors') */
+    new NoEmitOnErrorsPlugin(),
+    /* config.plugin('progress') */
+    new ProgressPlugin(),
+    /* config.plugin('html') */
+    new HtmlWebpackPlugin(
+      {
+        templateParameters: function () { /* omitted long function */ },
+        template: 'C:\\Users\\leandros\\github\\cpp-tour-new\\public\\index.html'
+      }
+    ),
+    /* config.plugin('preload') */
+    new PreloadPlugin(
+      {
+        rel: 'preload',
+        include: 'initial',
+        fileBlacklist: [
+          /\.map$/,
+          /hot-update\.js$/
+        ]
+      }
+    ),
+    /* config.plugin('prefetch') */
+    new PreloadPlugin(
+      {
+        rel: 'prefetch',
+        include: 'asyncChunks'
+      }
+    ),
+    /* config.plugin('copy') */
+    new CopyWebpackPlugin(
+      [
+        {
+          from: 'C:\\Users\\leandros\\github\\cpp-tour-new\\public',
+          to: 'C:\\Users\\leandros\\github\\cpp-tour-new\\dist',
+          ignore: [
+            'index.html',
+            '.DS_Store'
+          ]
+        }
+      ]
+    ),
+    /* config.plugin('fork-ts-checker') */
+    new ForkTsCheckerWebpackPlugin(
+      {
+        vue: true,
+        tslint: true,
+        formatter: 'codeframe',
+        checkSyntacticErrors: false
+      }
+    ),
+    {
+      config: {
+        chunks: [],
+        exclude: [
+          /\.map$/,
+          /^manifest.*\.js(?:on)?$/
+        ],
+        excludeChunks: [],
+        importsDirectory: '',
+        importScripts: [],
+        importWorkboxFrom: 'local',
+        precacheManifestFilename: 'precache-manifest.[manifestHash].js',
+        swDest: 'sw.js',
+        skipWaiting: true,
+        clientsClaim: true
+      }
+    }
+  ],
+  entry: {
+    app: [
+      './src/main.ts'
+    ],
+    vendors: [
+      'whatwg-fetch'
+    ]
+  }
+}

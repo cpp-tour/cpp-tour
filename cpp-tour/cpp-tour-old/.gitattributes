@@ -1,0 +1,24 @@
+# This sets the default behaviour, overriding core.autocrlf
+* text=auto
+
+# All source files should have unix line-endings in the repository,
+# but convert to native line-endings on checkout
+*.h text
+*.c text
+*.hpp text
+*.cpp text
+*.hxx text
+*.cxx text
+*.sh text
+*.json text
+*.js text
+*.ts text
+*.vue text
+*.txt text
+*.scss text
+*.md text
+
+# Windows specific files should retain windows line-endings
+*.sln text eol=crlf
+*.bat text eol=crlf
+

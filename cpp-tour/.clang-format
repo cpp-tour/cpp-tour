@@ -1,0 +1,14 @@
+BasedOnStyle: WebKit
+DerivePointerAlignment: false
+PointerAlignment: Right
+ColumnLimit: 80
+IndentWidth: 4
+ContinuationIndentWidth: 4
+AlignTrailingComments: true
+MaxEmptyLinesToKeep: 2
+ReflowComments: true
+SpaceAfterTemplateKeyword: false
+BinPackParameters: false
+AlignAfterOpenBracket: AlwaysBreak
+AllowShortFunctionsOnASingleLine: false
+AlwaysBreakTemplateDeclarations: true

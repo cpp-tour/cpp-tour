@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="A Tour of C++ - Discover C++ in this interactive tour through the language">
+    <meta name="apple-mobile-web-app-title" content="C++ Tour">
+    <meta name="msapplication-TileColor" content="#1f2021">
+    <meta name="msapplication-TileImage" content="<%= BASE_URL %>android-icon-144x144.png">
+    <meta name="theme-color" content="#1f2021">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico?v=3">
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= BASE_URL %>apple-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="<%= BASE_URL %>apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="<%= BASE_URL %>apple-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="<%= BASE_URL %>apple-icon-152x152.png">
+    <link rel="manifest" href="<%= BASE_URL %>manifest.json">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <title>C++ Tour</title>
+  </head>
+  <body>
+    <noscript>
+      <style type="text/css">
+      body { margin: 0px; }
+      </style>
+      <div style="display: flex; align-items: center; vertical-align: middle; justify-content: center; position: absolute; width: 100%; height: 100%; font-family: 'Roboto', sans-serif; color: #24292e; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-align: center; overflow: hidden; margin: 0px;">
+        <div style="max-width: 600px;">
+          <h1>We're sorry, but the C++ Tour doesn't work properly without JavaScript enabled. Please enable it to continue.</h1>
+        </div>
+      </div>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  <script>
+  const isIE = /Trident|MSIE/.test(navigator.userAgent);
+  if (!isIE && 'serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').then(function(registration) {
+        console.log('Service Worker registered: ', registration);
+      }).catch(function (registrationError) {
+        console.log('Service Worker registration failed: ', registrationError);
+      });
+    });
+  }
+  </script>
+  </body>
+</html>
