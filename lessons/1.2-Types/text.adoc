@@ -1,0 +1,13 @@
+= Types
+
+A very important feature of C++ is its type system. Each variable in a program
+has a type. More so, variables cannot change their types after they are
+declared. C++ compilers rely heavily on information conveyed by types: types
+determine what operations are allowed, wether a conversion to other type is
+possible, and even how and when to reclaim resources associated with a
+variable.
+
+C++ also allows creating new types and combining types in different ways. The
+smallest "building pieces" are _fundamental types_. On line 5 and 6 we use the
+fundamental types `int` (used for signed interger values) and `char` (used for
+characters).

@@ -1,0 +1,18 @@
+= Function Return Types
+
+Functions can produce a result, which they _return_. That's why, you have to
+specify a return type. In order to return a result, you use a
+_return statement_, like on line 18.
+
+If your function doesn't really produce any result, you can use another
+fundamental type, `void`, as the return type. That type is very special,
+because it doesn't have any allowed values. If a function returns `void`, it
+doesn't have to have a _return statement_.
+
+As you can see, the `main` function returns an `int`. This is required by the
+language. As a special case, `main` function also doesn't have to have a return
+statement (if this is the case, it returns `0`), but it is considered good
+practice to still put it there.
+
+To where does `main` returns, you ask? It returns a status code to your
+operating system and status code `0` means a success.

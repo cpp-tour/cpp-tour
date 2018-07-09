@@ -1,0 +1,15 @@
+= Namespaces
+
+When you write a program, and use more and more names, coming up with new ones
+becomes a problem. Even more so, when you use somebody else's code, which you
+_included_ into your file. To solve this issue, C++ has _namespaces_.  Those
+are named _scopes_, that contain other named entities, like variables and
+constants.
+
+On line 4 namespace `tour` is opened. It starts after the opening curly brace
+and ends with corresponding closing curly brace.
+
+In order to use a name from a namespace, you have to use the _scope resolution
+operator_ `::`, as we do on line 13. You may notice, that we used it twice:
+once for our namespace `tour`, and before that for `std`. This is the
+namespace, reserved for the C++ standard library (`std` stands for "standard").

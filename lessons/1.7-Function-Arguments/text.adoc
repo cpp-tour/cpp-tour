@@ -1,0 +1,12 @@
+= Function arguments
+
+A function could be given a _parameter list_ in order to specify how many and
+what kind of _arguments_ are accepted by the function. On line 8 we specify,
+that the function should be called with a single `int` bound to
+argument `answer`.
+
+On the following line you can see the same statement that was used in previous
+lessons, only now it uses an argument instead of a local variable.
+
+To pass arguments to a function, you put them inside parentheses of the
+function call operator (see line 17).

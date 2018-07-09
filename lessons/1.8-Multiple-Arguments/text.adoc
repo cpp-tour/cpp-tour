@@ -1,0 +1,7 @@
+= Multiple Arguments
+
+Functions can have multiple parameters. In order to declare a function that
+has several arguments, list them separated by commas, like we did on line 8.
+
+Likewise, to pass several arguments to a function, list them separated by a
+comma inside parentheses of function call operator.
