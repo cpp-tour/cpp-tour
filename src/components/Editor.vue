@@ -65,6 +65,7 @@ export default class Editor extends Vue {
     this.compiler.compile({
       code: this.editor.getValue(),
       codes: this.headers,
+      options: ['-Werror', '-Wconversion'],
     }).then((json) => {
       this.isCompiling = false;
       this.programOutput = json.program_message || '';
