@@ -11,6 +11,13 @@ endmacro()
 
 SUBDIRLIST(subdirs ${CMAKE_CURRENT_SOURCE_DIR})
 
+if(MSVC)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4 /std:c++latest")
+else()
+    set(CMAKE_CXX_STANDARD 17)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror -Wconversion")
+endif()
+
 foreach(subdir ${subdirs})
     add_executable(${subdir} ${subdir}/code.cpp)
     target_include_directories(${subdir} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/${subdir}")
