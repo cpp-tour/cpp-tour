@@ -1,22 +1,27 @@
 # Functions
 
-Functions are used to encapsulate a piece of code for easy reusability. They
-take zero or more arguments, and return a single value.
+Functions are used to encapsulate a piece of code. They take zero or more
+arguments, and return a single value.
 
 The general syntax to declare a function is:
 
 ```cpp
-Type name(ArgumentType argumentName, ArgumentType argumentName)
+Type Name(ArgumentType argumentName, ArgumentType argumentName)
 {
   /* code */
 }
 ```
 
-Arguments are optional. If the function returns no value, the type of the return
-value should be specified as `void`.
+Every function needs to have a *signature*, the return type, and types and numbers
+of arguments. Arguments are optional. If the function returns no value, the
+type of the return value needs to be specified as `void`.
 
 The function `greet`, in our example, takes no arguments, and is returning no
-value, hence the return type of `void`, and empty parantheses.
+value. Indicated by empty parantheses and the return type of `void`.
 
-It is called directly from main. If the end of a function is reached, execution
-jumps back to the point where the function was originally called.
+If the end of a function is reached, execution jumps back to the point where
+the function was originally called. In our example, `greet` is called from `main`,
+prints `Hello!` to the console, and continues executing `main`. Since the end of
+`main` is reached, it automatically returns zero and terminates our program.
+
+Go to the next lesson to learn about how to declare and use variables.

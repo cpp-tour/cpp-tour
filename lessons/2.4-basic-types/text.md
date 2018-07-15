@@ -26,6 +26,7 @@ not specified, and `unsigned`, which needs to be explicitly specified. Signed
 integers can represent negative numbers, while unsigned integers can't. It's
 wise to default to using `signed` integers in most cases.
 
+
 ## Floating Point
 
 Integers can only represent whole numbers, if you want to represent fractional
@@ -40,4 +41,16 @@ Your default choice should be `float` here, they can represent most numbers
 with a decent enough precision.
 They don't exist in `signed` and `unsigned` variants. They can represent negative
 numbers by default.
+
+
+## Others
+
+The following types are neither an integer or a floating point.
+
+- `bool` - a boolean value, either `true` or `false`
+- `void` - nothing. Cannot be declared directly
+
+A `bool` is a simple boolean value, being able to represent `true` or `false`.
+`void` is used to indicate nothing, for example for function return types.
+It cannot be used as a type for a variable directly.
 

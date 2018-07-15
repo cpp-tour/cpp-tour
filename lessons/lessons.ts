@@ -31,6 +31,46 @@ export default [
         id: '2.4-basic-types',
         name: 'Basic Types',
       },
+      {
+        id: '2.5-function-arguments',
+        name: 'Function Arguments',
+        comingSoon: true,
+      },
+      {
+        id: '2.6-type-conversion',
+        name: 'Type Conversion',
+        comingSoon: true,
+      },
+      {
+        id: '2.7-function-return-values',
+        name: 'Function Return Values',
+        comingSoon: true,
+      },
+      {
+        id: '2.8-type-deduction',
+        name: 'Type Deduction',
+        comingSoon: true,
+      },
+      {
+        id: '2.9-constants',
+        name: 'Constants',
+        comingSoon: true,
+      },
+      {
+        id: '2.9-namespaces',
+        name: 'Namespaces',
+        comingSoon: true,
+      },
+    ],
+  },
+  {
+    name: 'Advanced',
+    lessons: [
+      {
+        id: '3.0-algorithms',
+        name: 'Algorithms',
+        comingSoon: true,
+      },
     ],
   },
   {
