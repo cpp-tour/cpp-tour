@@ -74,16 +74,6 @@ export default [
     ],
   },
   {
-    name: 'Advanced',
-    lessons: [
-      {
-        id: '3.0-algorithms',
-        name: 'Algorithms',
-        comingSoon: true,
-      },
-    ],
-  },
-  {
     name: 'Expert',
     lessons: [
       {
