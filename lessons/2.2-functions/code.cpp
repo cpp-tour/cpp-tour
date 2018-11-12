@@ -1,8 +1,8 @@
-#include <stdio.h>
+#include <cstdio>
 
 void greet()
 {
-    puts("Hello!");
+    std::puts("Hello!");
 }
 
 int main()

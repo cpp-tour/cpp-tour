@@ -1,6 +1,6 @@
-#include <stdio.h>
+#include <cstdio>
 
 int main()
 {
-    puts("puts() called!");
+    std::puts("puts() called!");
 }
