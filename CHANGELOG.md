@@ -6,7 +6,10 @@ This project is following [semantic versioning](http://semver.org).
 Deprecated features will be kept for any following maintenance release, and
 will be removed after two major releases.
 
-## [Unreleased]
+## 1.0.1
+- Use `<cstdio>` over `<stdio.h>`
+
+## 1.0.0
 - Initial release
 
 <!-- This is an example how a section should look like:
