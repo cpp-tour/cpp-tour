@@ -14,7 +14,7 @@ variables when they're declared**.
 
 In the example you can see two variables of type `int` declared. Each variable
 is initialized with with the result of their initializer.
-`answer` is than printed to the console.
+`answer` is then printed to the console.
 
 The next lesson is going to look at how to declare variables of different types.
 
